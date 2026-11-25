@@ -5,7 +5,7 @@ export default function StrengthsSection() {
   return (
     <section
       id="strengths"
-      className="relative overflow-hidden py-16 px-4 mt-12 sm:mt-16"
+      className="scroll-mt-24 relative overflow-hidden py-16 px-4 mt-12 sm:mt-16"
     >
       {/* 背景画像とぼかしレイヤー */}
       <div

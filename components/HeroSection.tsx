@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Phone, CalendarCheck, ShieldCheck, ChevronRight } from "lucide-react";
 
 export default function HeroSection() {
-  const heroImages = ["/phb.jpg", "/phminori.jpg"];
+  const heroImages = ["/phminori-3.jpg", "/phminori-2.jpg", "/phminori-1.jpg"];
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function HeroSection() {
             <img
               src={src}
               alt="有限会社 美野里自動車整備工場"
-              className={`h-full w-full object-cover object-center transition-transform duration-[7000ms] ease-out ${
+              className={`h-full w-full object-cover object-center brightness-110 contrast-105 transition-transform duration-[7000ms] ease-out ${
                 isActive ? "scale-110" : "scale-100"
               }`}
             />
@@ -38,8 +38,8 @@ export default function HeroSection() {
         );
       })}
 
-      {/* 文字を読みやすくするための暗めグラデーションフィルター */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-900/70 to-emerald-950/60" />
+      {/* 文字を読みやすくするための暗めグラデーションフィルター（右側は写真を明るく見せる） */}
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/75 via-slate-900/40 to-transparent" />
 
       {/* 前面のテキスト・ボタンコンテンツ */}
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 sm:py-24">
@@ -60,8 +60,8 @@ export default function HeroSection() {
             お客様の立場に立った丁寧な説明と確かな技術で、安全快適なカーライフをお守りします。
           </p>
 
-                    {/* アクションボタン */}
-                    <div className="grid grid-cols-2 sm:flex sm:flex-row gap-2 sm:gap-3.5 pt-2">
+          {/* アクションボタン（スマホ時は hidden で非表示、sm以上で flex 表示） */}
+          <div className="hidden sm:flex sm:flex-row gap-2 sm:gap-3.5 pt-2">
             <a
               href="https://line.me/R/ti/p/%40564olgwa"
               target="_blank"
@@ -79,7 +79,7 @@ export default function HeroSection() {
                 </svg>
               </div>
 
-              {/* 2段構成のテキスト（スマホでは文字を小さくして1行に収める） */}
+              {/* 2段構成のテキスト */}
               <div className="text-left leading-tight min-w-0">
                 <span className="block text-[9px] sm:text-[11px] font-medium text-emerald-100 truncate">
                   24時間受付・写真見積OK
@@ -106,8 +106,6 @@ export default function HeroSection() {
               </div>
             </a>
           </div>
-
-
         </div>
       </div>
     </section>
